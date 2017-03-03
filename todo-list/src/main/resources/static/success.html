@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Success</title>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+ 
+    <title>Todos list</title>
 </head>
 <body>
-<h3>Success!</h3>
+
+
+<div class="container">
+
+    <div th:if="${not #lists.isEmpty(todolist)}">
+        <h2>Todo List</h2>
+        <table class="table table-striped" modelAttribute="todolist">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each="todo : ${todolist}">
+                <td th:text="${todo.title}">${todo.title}</td>
+                <td th:text="${todo.description}">description</td>
+                <!-- <td><a th:href="${ '/product/' + product.id}">View</a></td>
+                <td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>-->
+            </tr>
+        </table>
+ 
+    </div>
+</div>
+ 
 </body>
 </html>

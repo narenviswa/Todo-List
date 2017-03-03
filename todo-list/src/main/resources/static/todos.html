@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Simple Todo List</h1>
+<div th:unless="${ #lists.isEmpty(todolist) }">
+    <dl th:each="todo : ${todolist}">
+        <dt class="todoHeadline">
+            <span th:text="${todo.title}"></span>
+            <span th:text="${todo.description}"></span>
+        </dt>
+    </dl>
+</div>
+<div th:if="${ #lists.isEmpty(todolist) }">
+</div>
+
+<h3>Add A New Item</h3><br>
+<form method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" size="50"></input><br/>
+    <label for="description">Description:</label><br/>
+        <textarea name="description" cols="80" rows="5">
+        </textarea><br/>
+    <input type="submit"></input>
+</form>
+</body>
+</html>

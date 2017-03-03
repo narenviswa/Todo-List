@@ -1,14 +1,29 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Sign up</title>
+<meta charset="UTF-8">
+<title>Sign In form</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-<form method="post" action="http://localhost:8080/signup">
-UserName : <input name="username" /><br>
-Password :<input type="password" name=password /><br>
-<input type="submit" />
-</form>
+<div id="main" class="container"> 
+	<form name="loginform" id="loginform" action="#" method="post" class="wpl-track-me">
+	<p class="login-username"> 
+		<label for="user_login">Username</label> <input type="text" name="username" id="user_login" class="input" value="" size="20" placeholder="Username"> 
+	</p>
+	<p class="login-password"> 
+		<label for="user_pass">Password</label> <input type="password" name="password" id="user_pass" class="input" value="" size="20"
+		placeholder="Password"> 
+	</p> 
+	<p class="login-remember">
+		<label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+	</p> 
+	<p class="login-submit"> 
+		<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Login"> <input type="hidden" name="redirect_to" value="http://www.mysite.com/marketplace/account/"> 
+	</p> 
+	</form> 
+
+ </div>
 </body>
 </html>

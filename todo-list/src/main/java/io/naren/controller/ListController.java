@@ -43,7 +43,7 @@ public class ListController {
 		n.setUsername(username);
 		n.setPassword(password);
 		listrepo.save(n);
-		return new ModelAndView("redirect:/successful");
+		return new ModelAndView("redirect:/todo");
 		}
     	System.out.println("user name already exit");
     	return new ModelAndView("redirect:/errorthrown");
